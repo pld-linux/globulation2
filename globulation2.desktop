@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Globulation2
+Comment=Real Time Strategy game
+Comment[pl]=Gra Strategii Czasu Rzeczywistego
+Exec=glob2
+Icon=globulation2.png
+Terminal=false
+Type=Application
+Categories=Application;Game;StrategyGame;
+Encoding=UTF-8
+# vi: encoding=utf-8
