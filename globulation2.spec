@@ -1,14 +1,14 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl):	Glob2 - gra Strategii Czasu Rzeczywistego bêd±ca sztuk± przez du¿e "S"
 Name:		globulation2
-Version:	0.8.8
+Version:	0.8.11
 Release:	1
 Epoch:		2
 License:	GPL
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://www.ysagoon.com/glob2/data/glob2-%{version}.tar.gz
-# Source0-md5:	e69c1df54d3c7b075595a5909620d0d6
+# Source0-md5:	36baa5c67f77b29d421cc178006c07f0
 Source1:	http://moneo.phear.org/~nct/glob2gfx.tar
 # Source1-md5:	368125e0e2c250e903eca18287a551b5
 Source2:	http://goldeneye.sked.ch/~smagnena/sans.ttf
@@ -25,6 +25,7 @@ BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
+BuildRequires:	speex-devel
 BuildRequires:	unzip
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -72,6 +73,7 @@ rm -f missing
 %{__autoheader}
 %{__automake}
 %{__autoconf}
+CPPFLAGS="%{rpmcflags} -I%{_includedir}/speex"
 LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
 %configure \
 	--enable-opengl 
