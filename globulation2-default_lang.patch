@@ -1,12 +1,11 @@
-diff -urN aaa/glob2/src/StringTable.cpp glob2/src/StringTable.cpp
---- aaa/glob2/src/StringTable.cpp	2003-05-04 15:03:55.000000000 +0200
-+++ glob2/src/StringTable.cpp	2003-07-16 13:43:25.000000000 +0200
-@@ -111,7 +111,8 @@
+diff -urN glob2-0.8.0/libgag/src/StringTable.cpp glob2-mod/libgag/src/StringTable.cpp
+--- glob2-0.8.0/libgag/src/StringTable.cpp	2004-01-01 13:56:44.000000000 +0100
++++ glob2-mod/libgag/src/StringTable.cpp	2004-02-02 02:14:15.000000000 +0100
+@@ -113,7 +113,7 @@
  	}
  	else
  	{
 -		actlang=0;
-+		// make english language default
 +		actlang=1;
  		// get length
  		if (fgets(temp, 1024, fp)==NULL)
