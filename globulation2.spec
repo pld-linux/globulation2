@@ -1,12 +1,12 @@
-Summary:	Glob2 is a state of the art Real Time Strategy (RTS) game.
-Summary(pl):	Glob2 jest sztuk± przez du¿e "S" w postaci Strategii Czasu Rzeczywistego
+Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
+Summary(pl):	Glob2 - gra Strategii Czasu Rzeczywistego bêd±ca sztuk± przez du¿e "S"
 Name:		globulation2
 Version:	2.0.1
 Release:	1.1
 Epoch:		1
 License:	GPL
 Group:		Applications/Games
-Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charri?re
+Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://moneo.phear.org/~nct/glob2-latest.tar.gz
 # Source0-md5:	0f6d0d0b524e51d473814fe8606dd0aa
 Source1:	http://www.ysagoon.com/glob2/data/map-max.zip
@@ -50,19 +50,20 @@ a meta-server. It also features a scripting language for versatile
 gameplay and an integrated map editor.
 
 %description -l pl
-Glob2 jest sztuk± przez du¿e "S" w postaci Strategii Czasu Rzeczywistego 
-(RTS). Jest to wolne oprogramowanie dystrybuowane zgodnie z zasadami 
-okre¶lonymi w licencji GNU/GPL.
+Glob2 jest gr± Strategii Czasu Rzeczywistego (RTS) bêd±c± sztuk± przez
+du¿e "S". Jest to wolne oprogramowanie dystrybuowane zgodnie z
+zasadami okre¶lonymi w licencji GNU/GPL.
 
-W ogólno¶ci Globulation jest projektem maj±cym na celu stworzenie wysokiej 
-jako¶ci innowacyjnego ¶rodowiska gry poprzez minimalizacjê mikro-zarz±dzania
-i automatycznego przypisywania zadañ jednostkom. Gracz musi tylko zamówiæ 
-po¿±dan± ilo¶æ jednostek do realizacji danego zadania, a jednostki zrobi± 
-wszystko co tylko mog±, ¿eby zaspokoiæ oczekiwania Gracza.
+W ogólno¶ci Globulation jest projektem maj±cym na celu stworzenie
+wysokiej jako¶ci innowacyjnego ¶rodowiska gry poprzez minimalizacjê
+mikro-zarz±dzania i automatycznego przypisywania zadañ jednostkom.
+Gracz musi tylko zamówiæ po¿±dan± ilo¶æ jednostek do realizacji danego
+zadania, a jednostki zrobi± wszystko co tylko mog±, ¿eby zaspokoiæ
+oczekiwania Gracza.
 
-Glob2 mo¿e byæ grana pojedyñczo, poprzez sieæ LAN albo przez internet dziêki 
-metaserwerowi Ysagoon Online Game (YOG). Istnieje tak¿e jêzyk skryptowy dla
-zró¿nicowania gry oraz zintegrowany edytor map.
+Glob2 mo¿e byæ grana pojedynczo, poprzez sieæ LAN albo przez Internet
+dziêki metaserwerowi Ysagoon Online Game (YOG). Istnieje tak¿e jêzyk
+skryptowy dla zró¿nicowania gry oraz zintegrowany edytor map.
 
 %prep
 %setup -q -n glob2
@@ -70,27 +71,29 @@ zró¿nicowania gry oraz zintegrowany edytor map.
 
 %build
 rm -f missing
-#%%{__gettextize}
 %{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure \
-	LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
+LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-unzip %{SOURCE1} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
-unzip %{SOURCE2} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
-unzip %{SOURCE3} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
-unzip %{SOURCE4} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
-unzip %{SOURCE5} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
-unzip %{SOURCE6} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
-tar -C $RPM_BUILD_ROOT/%{_datadir}/glob2/data -xf %{SOURCE7}
-cp %{SOURCE8} $RPM_BUILD_ROOT/%{_datadir}/glob2/data/fonts
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+unzip %{SOURCE1} -d $RPM_BUILD_ROOT%{_datadir}/glob2/maps
+unzip %{SOURCE2} -d $RPM_BUILD_ROOT%{_datadir}/glob2/maps
+unzip %{SOURCE3} -d $RPM_BUILD_ROOT%{_datadir}/glob2/maps
+unzip %{SOURCE4} -d $RPM_BUILD_ROOT%{_datadir}/glob2/maps
+unzip %{SOURCE5} -d $RPM_BUILD_ROOT%{_datadir}/glob2/maps
+unzip %{SOURCE6} -d $RPM_BUILD_ROOT%{_datadir}/glob2/maps
+
+tar -C $RPM_BUILD_ROOT%{_datadir}/glob2/data -xf %{SOURCE7}
+install %{SOURCE8} $RPM_BUILD_ROOT%{_datadir}/glob2/data/fonts
 
 %clean
 rm -rf $RPM_BUILD_ROOT
