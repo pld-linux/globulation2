@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Globulation2
 Comment=Real Time Strategy game
-Comment[pl]=Gra Strategii Czasu Rzeczywistego
+Comment[pl]=Gra strategiczna czasu rzeczywistego
 Exec=glob2
 Icon=globulation2.png
 Terminal=false
