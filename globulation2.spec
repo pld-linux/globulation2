@@ -35,18 +35,18 @@ BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Glob2 is a state of the art Real Time Strategy (RTS) game. It is free 
+Glob2 is a state of the art Real Time Strategy (RTS) game. It is free
 software released under the terms of the GNU General Public License.
 
-Globulation in a whole is an on-going project to create an innovative 
-high quality gameplay by minimizing micro-managment and assigning 
-automatically the tasks to the units. The player just has to order 
-the number of units he wants for a selected task and the units will 
+Globulation in a whole is an on-going project to create an innovative
+high quality gameplay by minimizing micro-managment and assigning
+automatically the tasks to the units. The player just has to order
+the number of units he wants for a selected task and the units will
 do their best to satisfy your requirements.
 
-Glob2 can be played by a single player, through your Local Area 
-Network (LAN), or through Internet thanks to Ysagoon Online Game (YOG), 
-a meta-server. It also features a scripting language for versatile 
+Glob2 can be played by a single player, through your Local Area
+Network (LAN), or through Internet thanks to Ysagoon Online Game (YOG),
+a meta-server. It also features a scripting language for versatile
 gameplay and an integrated map editor.
 
 %description -l pl
