@@ -1,18 +1,20 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl):	Glob2 - gra Strategii Czasu Rzeczywistego bêd±ca sztuk± przez du¿e "S"
 Name:		globulation2
-Version:	0.8.5
+Version:	0.8.6
 Release:	1
 Epoch:		2
 License:	GPL
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://www.ysagoon.com/glob2/data/glob2-%{version}.tar.gz
-# Source0-md5:	2f304a15609880550e8972f8f2c75c8d
+# Source0-md5:	f21d9c8ca7c743c5d5e947d8d639acd9
 Source1:	http://moneo.phear.org/~nct/glob2gfx.tar
 # Source1-md5:	368125e0e2c250e903eca18287a551b5
 Source2:	http://goldeneye.sked.ch/~smagnena/sans.ttf
 # Source2-md5:	48d9e359be3689eac14ef788a3bb1aa0
+Source3:	%{name}.desktop
+Source4:	%{name}.png
 Patch0:		%{name}-default_lang.patch
 URL:		http://ysagoon.com/glob2/
 BuildRequires:	OpenGL-devel
@@ -72,18 +74,21 @@ rm -f missing
 %{__autoconf}
 LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
 %configure \
-	--enable-opengl
+	--enable-opengl 
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 tar -C $RPM_BUILD_ROOT%{_datadir}/glob2/data -xf %{SOURCE1}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/glob2/data/fonts
+install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -93,3 +98,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/glob2
+%{_desktopdir}/*
+%{_pixmapsdir}/*
