@@ -73,7 +73,8 @@ rm -f missing
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
 %{__make}
 
 %install
@@ -96,6 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README
+%doc AUTHORS ChangeLog README TODO doc/unit.txt
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/glob2
