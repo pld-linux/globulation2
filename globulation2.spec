@@ -29,6 +29,8 @@ Patch0:		%{name}-default_lang.patch
 URL:		http://ysagoon.com/glob2/
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_image-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	unzip
 #BuildRequires:	OpenGL-devel
