@@ -2,11 +2,11 @@ diff -urN glob2-0.8.0/libgag/src/StringTable.cpp glob2-mod/libgag/src/StringTabl
 --- glob2-0.8.0/libgag/src/StringTable.cpp	2004-01-01 13:56:44.000000000 +0100
 +++ glob2-mod/libgag/src/StringTable.cpp	2004-02-02 02:14:15.000000000 +0100
 @@ -113,7 +113,7 @@
- 	}
- 	else
- 	{
--		actlang=0;
-+		actlang=1;
- 		// get length
- 		if (fgets(temp, 1024, fp)==NULL)
+ 		}
+ 		else
  		{
+-			actLang = 0;
++			actLang = 1;
+ 			
+ 			// get number of language
+ 			if (fgets(temp, 1024, fp)==NULL)
