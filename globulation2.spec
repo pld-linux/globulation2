@@ -8,7 +8,7 @@ License:	GPL
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charri?re
 Source0:	http://moneo.phear.org/~nct/glob2-latest.tar.gz
-# Source0-md5:	9ca15309f68c450488393c73b244982e
+# Source0-md5:	0f6d0d0b524e51d473814fe8606dd0aa
 Source1:	http://www.ysagoon.com/glob2/data/map-max.zip
 # Source1-md5:	ae15af82644d1382d428c0e2e5de3d54
 Source2:	http://www.ysagoon.com/glob2/data/map-amazon.zip
