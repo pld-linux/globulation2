@@ -7,23 +7,12 @@ Epoch:		1
 License:	GPL
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charri?re
-#Icon:		-
 Source0:	http://moneo.phear.org/~nct/glob2-latest.tar.gz
 # Source0-md5:	9ca15309f68c450488393c73b244982e
-#Patch0:		%{name}-what.patch
 URL:		http://ysagoon.com/glob2/
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_image-devel
 #BuildRequires:	OpenGL-devel
-#BuildRequires:	-
-#PreReq:		-
-#Requires:	-
-#Requires(pre,post):	-
-#Requires(preun):	-
-#Requires(postun):	-
-#Provides:	-
-#Obsoletes:	-
-#Conflicts:	-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,8 +56,7 @@ zró¿nicowania gry oraz zintegrowany edytor map.
 #%description subpackage -l pl
 
 %prep
-%setup -q -n %{name}-%{version}.orig -a 1
-%patch0 -p1
+%setup -q -n %{name}-%{version}.orig
 
 %build
 rm -f missing
@@ -90,21 +78,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%pre
-
-%post
-
-%preun
-
-%postun
-
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 
-%files subpackage
-%defattr(644,root,root,755)
-%doc extras/*.gz
-%{_datadir}/%{name}-ext
+#%files subpackage
+#%defattr(644,root,root,755)
+#%doc extras/*.gz
+#%{_datadir}/%{name}-ext
