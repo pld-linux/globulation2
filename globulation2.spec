@@ -2,7 +2,7 @@ Summary:	Glob2 is a state of the art Real Time Strategy (RTS) game.
 Summary(pl):	Glob2 jest sztuk± przez du¿e "S" w postaci Strategii Czasu Rzeczywistego
 Name:		globulation2
 Version:	2.0.1
-Release:	1
+Release:	1.1
 Epoch:		1
 License:	GPL
 Group:		Applications/Games
@@ -25,6 +25,7 @@ Source7:	http://moneo.phear.org/~nct/glob2gfx.tar
 # Source7-md5:	368125e0e2c250e903eca18287a551b5
 Source8:	http://goldeneye.sked.ch/~smagnena/sans.ttf
 # Source8-md5:	48d9e359be3689eac14ef788a3bb1aa0
+Patch0:		%{name}-default_lang.patch
 URL:		http://ysagoon.com/glob2/
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_image-devel
@@ -65,6 +66,7 @@ zró¿nicowania gry oraz zintegrowany edytor map.
 
 %prep
 %setup -q -n glob2
+%patch0 -p1
 
 %build
 rm -f missing
@@ -79,8 +81,6 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
-#install -d $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 unzip %{SOURCE1} -d $RPM_BUILD_ROOT/%{_datadir}/glob2/maps
