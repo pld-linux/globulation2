@@ -1,12 +1,11 @@
-diff -urN glob2-0.8.0/libgag/src/StringTable.cpp glob2-mod/libgag/src/StringTable.cpp
---- glob2-0.8.0/libgag/src/StringTable.cpp	2004-01-01 13:56:44.000000000 +0100
-+++ glob2-mod/libgag/src/StringTable.cpp	2004-02-02 02:14:15.000000000 +0100
-@@ -113,7 +113,7 @@
- 		}
- 		else
- 		{
--			actLang = 0;
-+			actLang = 1;
- 			
- 			// get number of language
- 			if (fgets(temp, 1024, fp)==NULL)
+--- glob2-0.8.11/libgag/src/StringTable.cpp.orig	2005-01-23 12:58:13.000000000 +0100
++++ glob2-0.8.11/libgag/src/StringTable.cpp	2005-01-23 13:00:10.000000000 +0100
+@@ -29,7 +29,7 @@
+ 	StringTable::StringTable()
+ 	{
+ 		languageCount = 0;
+-		actLang = 0;
++		actLang = 1;
+ 		defaultLang = 0;
+ 	}
+ 	
