@@ -1,14 +1,14 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl):	Glob2 - gra Strategii Czasu Rzeczywistego bêd±ca sztuk± przez du¿e "S"
 Name:		globulation2
-Version:	0.8.12
+Version:	0.8.15
 Release:	1
 Epoch:		2
 License:	GPL
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://epfl.ysagoon.com/~glob2/data/glob2-%{version}.tar.gz
-# Source0-md5:	3f49d2580630b3012074902240a83417
+# Source0-md5:	9adabb11048cd55c52822456b889b514
 Source1:	http://moneo.phear.org/~nct/glob2gfx.tar
 # Source1-md5:	368125e0e2c250e903eca18287a551b5
 Source2:	http://goldeneye.sked.ch/~smagnena/sans.ttf
