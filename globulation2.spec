@@ -38,14 +38,14 @@ software released under the terms of the GNU General Public License.
 
 Globulation in a whole is an on-going project to create an innovative
 high quality gameplay by minimizing micro-managment and assigning
-automatically the tasks to the units. The player just has to order
-the number of units he wants for a selected task and the units will
-do their best to satisfy your requirements.
+automatically the tasks to the units. The player just has to order the
+number of units he wants for a selected task and the units will do
+their best to satisfy your requirements.
 
 Glob2 can be played by a single player, through your Local Area
-Network (LAN), or through Internet thanks to Ysagoon Online Game (YOG),
-a meta-server. It also features a scripting language for versatile
-gameplay and an integrated map editor.
+Network (LAN), or through Internet thanks to Ysagoon Online Game
+(YOG), a meta-server. It also features a scripting language for
+versatile gameplay and an integrated map editor.
 
 %description -l pl
 Glob2 jest gr± Strategii Czasu Rzeczywistego (RTS) bêd±c± sztuk± przez
@@ -76,7 +76,7 @@ rm -f missing
 CPPFLAGS="%{rpmcflags} -I%{_includedir}/speex"
 LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
 %configure \
-	--enable-opengl 
+	--enable-opengl
 
 %{__make}
 
