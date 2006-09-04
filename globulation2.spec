@@ -22,6 +22,7 @@ BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	boost-ref-devel
 BuildRequires:	freetype-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
