@@ -98,5 +98,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/glob2
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
