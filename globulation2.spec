@@ -2,7 +2,7 @@ Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl):	Glob2 - gra Strategii Czasu Rzeczywistego bêd±ca sztuk± przez du¿e "S"
 Name:		globulation2
 Version:	0.8.21
-Release:	2
+Release:	3
 Epoch:		2
 License:	GPL
 Group:		Applications/Games
@@ -19,6 +19,7 @@ URL:		http://globulation2.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_net-devel
+BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	boost-ref-devel
@@ -27,6 +28,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	speex-devel
 BuildRequires:	unzip
+Requires:	desktop-file-utils
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,6 +94,12 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/glob2/data/fonts
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_desktop_database_post
+
+%postun
+%update_desktop_database_postun
 
 %files
 %defattr(644,root,root,755)
