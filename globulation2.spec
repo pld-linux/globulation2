@@ -28,8 +28,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	speex-devel
 BuildRequires:	unzip
-Requires:	desktop-file-utils
-Requires:	OpenGL
+Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -71,13 +70,11 @@ skryptowy dla zró¿nicowania gry oraz zintegrowany edytor map.
 %patch1 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
 CPPFLAGS="%{rpmcflags} -I%{_includedir}/speex"
-LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib"
 %configure \
 	--enable-opengl
 
