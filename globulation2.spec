@@ -75,8 +75,7 @@ skryptowy dla zró¿nicowania gry oraz zintegrowany edytor map.
 %{__automake}
 %{__autoconf}
 CPPFLAGS="%{rpmcflags} -I%{_includedir}/speex"
-%configure \
-	--enable-opengl
+%configure
 
 %{__make}
 
