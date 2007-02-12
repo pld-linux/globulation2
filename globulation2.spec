@@ -1,5 +1,5 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
-Summary(pl):	Glob2 - gra Strategii Czasu Rzeczywistego bêd±ca sztuk± przez du¿e "S"
+Summary(pl.UTF-8):   Glob2 - gra Strategii Czasu Rzeczywistego bÄ™dÄ…ca sztukÄ… przez duÅ¼e "S"
 Name:		globulation2
 Version:	0.8.21
 Release:	3
@@ -48,21 +48,21 @@ Network (LAN), or through Internet thanks to Ysagoon Online Game
 (YOG), a meta-server. It also features a scripting language for
 versatile gameplay and an integrated map editor.
 
-%description -l pl
-Glob2 jest gr± Strategii Czasu Rzeczywistego (RTS) bêd±c± sztuk± przez
-du¿e "S". Jest to wolne oprogramowanie dystrybuowane zgodnie z
-zasadami okre¶lonymi w licencji GNU/GPL.
+%description -l pl.UTF-8
+Glob2 jest grÄ… Strategii Czasu Rzeczywistego (RTS) bÄ™dÄ…cÄ… sztukÄ… przez
+duÅ¼e "S". Jest to wolne oprogramowanie dystrybuowane zgodnie z
+zasadami okreÅ›lonymi w licencji GNU/GPL.
 
-W ogólno¶ci Globulation jest projektem maj±cym na celu stworzenie
-wysokiej jako¶ci innowacyjnego ¶rodowiska gry poprzez minimalizacjê
-mikro-zarz±dzania i automatycznego przypisywania zadañ jednostkom.
-Gracz musi tylko zamówiæ po¿±dan± ilo¶æ jednostek do realizacji danego
-zadania, a jednostki zrobi± wszystko co tylko mog±, ¿eby zaspokoiæ
+W ogÃ³lnoÅ›ci Globulation jest projektem majÄ…cym na celu stworzenie
+wysokiej jakoÅ›ci innowacyjnego Å›rodowiska gry poprzez minimalizacjÄ™
+mikro-zarzÄ…dzania i automatycznego przypisywania zadaÅ„ jednostkom.
+Gracz musi tylko zamÃ³wiÄ‡ poÅ¼Ä…danÄ… iloÅ›Ä‡ jednostek do realizacji danego
+zadania, a jednostki zrobiÄ… wszystko co tylko mogÄ…, Å¼eby zaspokoiÄ‡
 oczekiwania Gracza.
 
-Glob2 mo¿e byæ grana pojedynczo, poprzez sieæ LAN albo przez Internet
-dziêki metaserwerowi Ysagoon Online Game (YOG). Istnieje tak¿e jêzyk
-skryptowy dla zró¿nicowania gry oraz zintegrowany edytor map.
+Glob2 moÅ¼e byÄ‡ grana pojedynczo, poprzez sieÄ‡ LAN albo przez Internet
+dziÄ™ki metaserwerowi Ysagoon Online Game (YOG). Istnieje takÅ¼e jÄ™zyk
+skryptowy dla zrÃ³Å¼nicowania gry oraz zintegrowany edytor map.
 
 %prep
 %setup -q -n glob2-%{version}
