@@ -1,5 +1,5 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
-Summary(pl.UTF-8):   Glob2 - gra Strategii Czasu Rzeczywistego będąca sztuką przez duże "S"
+Summary(pl.UTF-8):	Glob2 - gra Strategii Czasu Rzeczywistego będąca sztuką przez duże "S"
 Name:		globulation2
 Version:	0.8.21
 Release:	3
