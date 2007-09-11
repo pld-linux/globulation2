@@ -1,34 +1,30 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl.UTF-8):	Glob2 - gra Strategii Czasu Rzeczywistego będąca sztuką przez duże "S"
 Name:		globulation2
-Version:	0.8.23
+Version:	0.9.1
 Release:	1
 Epoch:		2
-License:	GPL
+License:	GPL v3+
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://dl.sv.nongnu.org/releases/glob2/%{version}/glob2-%{version}.tar.gz
-# Source0-md5:	d8807da21fc32db1727dd62b8d5c786a
-Source1:	http://cursor.uam.mx/mirrors/gnu/savannah/files/glob2/glob2gfx.tar
-# Source1-md5:	8e4516243ecaa76fa12d700f4a93e708
-Source2:	http://goldeneye.sked.ch/~smagnena/sans.ttf
-# Source2-md5:	48d9e359be3689eac14ef788a3bb1aa0
+# Source0-md5:	172d9becf087ffea4eda003307507260
+Source1:	%{name}.desktop
 Patch0:		%{name}-default_lang.patch
-Patch1:		%{name}-desktop.patch
 URL:		http://globulation2.org/
 BuildRequires:	OpenGL-devel
-BuildRequires:	SDL_image-devel
-BuildRequires:	SDL_net-devel
-BuildRequires:	SDL_ttf-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	SDL-devel >= 1.2
+BuildRequires:	SDL_image-devel >= 1.2
+BuildRequires:	SDL_net-devel >= 1.2
+BuildRequires:	SDL_ttf-devel >= 2.0
 BuildRequires:	boost-ref-devel
 BuildRequires:	freetype-devel
+BuildRequires:	libogg-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
+BuildRequires:	scons
 BuildRequires:	speex-devel
-BuildRequires:	unzip
-Requires(post,postun):	desktop-file-utils
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -67,40 +63,29 @@ skryptowy dla zróżnicowania gry oraz zintegrowany edytor map.
 %prep
 %setup -q -n glob2-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
-CPPFLAGS="%{rpmcflags} -I%{_includedir}/speex"
-%configure
-
-%{__make}
+scons \
+	CXXFLAGS="%{rpmcxxflags}" \
+	INSTALLDIR="%{_datadir}" \
+	BINDIR="%{_bindir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/glob2,%{_desktopdir},%{_pixmapsdir}}
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-tar -C $RPM_BUILD_ROOT%{_datadir}/glob2/data -xf %{SOURCE1}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/glob2/data/fonts
+install src/glob2 $RPM_BUILD_ROOT%{_bindir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install data/icons/glob2-icon-48x48.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+cp -r {data,campaigns,maps,scripts} $RPM_BUILD_ROOT%{_datadir}/glob2
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-%update_desktop_database_post
-
-%postun
-%update_desktop_database_postun
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/glob2
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png
