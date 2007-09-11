@@ -8,7 +8,7 @@ License:	GPL v3+
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://dl.sv.nongnu.org/releases/glob2/%{version}/glob2-%{version}.tar.gz
-# Source0-md5:	172d9becf087ffea4eda003307507260
+# Source0-md5:	507da29c310f199f9b1a9a5f335b7a7a
 Source1:	%{name}.desktop
 Patch0:		%{name}-default_lang.patch
 URL:		http://globulation2.org/
