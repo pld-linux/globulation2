@@ -2,10 +2,9 @@
 Name=Globulation 2
 Comment=An innovative new strategy game
 Comment[pl]=Nowa innowacyjna gra strategiczna
-Icon=globulation2.png
+Icon=globulation2
 Exec=glob2
 Terminal=false
 Type=Application
 Categories=Game;StrategyGame;
-Encoding=UTF-8
 # vi: encoding=utf-8
