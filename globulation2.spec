@@ -1,14 +1,18 @@
+#
+# TODO:
+# - use arch compiler (not just g++)
+#
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl.UTF-8):	Glob2 - gra Strategii Czasu Rzeczywistego będąca sztuką przez duże "S"
 Name:		globulation2
-Version:	0.9.1
+Version:	0.9.2
 Release:	1
 Epoch:		2
 License:	GPL v3+
 Group:		Applications/Games
 Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://dl.sv.nongnu.org/releases/glob2/%{version}/glob2-%{version}.tar.gz
-# Source0-md5:	507da29c310f199f9b1a9a5f335b7a7a
+# Source0-md5:	5ca119d2b9a103073465bc356815eecf
 Source1:	%{name}.desktop
 Patch0:		%{name}-default_lang.patch
 URL:		http://globulation2.org/
@@ -66,7 +70,7 @@ skryptowy dla zróżnicowania gry oraz zintegrowany edytor map.
 %patch0 -p1
 
 %build
-scons \
+%{scons} \
 	CXXFLAGS="%{rpmcxxflags}" \
 	INSTALLDIR="%{_datadir}" \
 	BINDIR="%{_bindir}"
@@ -85,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README TODO
+%doc AUTHORS README doc/*
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/glob2
 %{_desktopdir}/%{name}.desktop
