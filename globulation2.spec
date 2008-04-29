@@ -17,8 +17,7 @@ BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_image-devel >= 1.2
 BuildRequires:	SDL_net-devel >= 1.2
 BuildRequires:	SDL_ttf-devel >= 2.0
-BuildRequires:	boost-ref-devel
-BuildRequires:	boost-thread-devel
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	freetype-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libstdc++-devel
