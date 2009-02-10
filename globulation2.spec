@@ -5,14 +5,13 @@
 Summary:	Glob2 - a state of the art Real Time Strategy (RTS) game
 Summary(pl.UTF-8):	Glob2 - gra Strategii Czasu Rzeczywistego będąca sztuką przez duże "S"
 Name:		globulation2
-Version:	0.9.3
-Release:	1
+Version:	0.9.4
+Release:	0.beta.1
 Epoch:		2
 License:	GPL v3+
 Group:		Applications/Games
-Vendor:		Stephane Magnenat, Julien Pilet, Luc-Olivier de Charriere
 Source0:	http://dl.sv.nongnu.org/releases/glob2/%{version}/glob2-%{version}.tar.gz
-# Source0-md5:	e0483d5864cff4ace5ac8e39eae27429
+# Source0-md5:	087169fcf82e4073266307680e75e447
 Source1:	%{name}.desktop
 Patch0:		%{name}-default_lang.patch
 URL:		http://globulation2.org/
@@ -21,12 +20,12 @@ BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_image-devel >= 1.2
 BuildRequires:	SDL_net-devel >= 1.2
 BuildRequires:	SDL_ttf-devel >= 2.0
-BuildRequires:	boost-ref-devel
-BuildRequires:	boost-thread-devel
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	freetype-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
+BuildRequires:	rpmbuild(macros) >= 1.337
 BuildRequires:	scons
 BuildRequires:	speex-devel
 BuildRequires:	zlib-devel
@@ -70,8 +69,7 @@ skryptowy dla zróżnicowania gry oraz zintegrowany edytor map.
 %patch0 -p1
 
 %build
-scons \
-	CXXFLAGS="%{rpmcxxflags}" \
+%scons \
 	LINKFLAGS="%{rpmldflags}" \
 	INSTALLDIR="%{_datadir}" \
 	BINDIR="%{_bindir}"
@@ -90,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/glob2
 %{_desktopdir}/%{name}.desktop
